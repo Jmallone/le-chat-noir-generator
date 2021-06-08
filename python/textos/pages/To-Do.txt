@@ -1,0 +1,20 @@
+Lista de Afazeres
+00/00/0000
+#Todo
+Lista de coisas que ainda tenho que implementar
+
+##MarkDown
+Citação: > Quote
+Imagem: ![label](url)
+Link: [label](url)
+Barra: !-
+Codigo: `int a = 6`
+
+##Implementação
+> quando tem dois espaços na mesma linha acaba perdendo o que esta a frente!
+
+> apaga os posts tanto do pc como do servidor
+-----nc.delete('filename1', ...)
+
+> Allposts: Aparecer o Ultimo
+

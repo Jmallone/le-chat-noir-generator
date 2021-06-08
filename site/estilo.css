@@ -1,0 +1,91 @@
+body{
+	background-color: #101010;
+	color: white;
+	font-family: "Arial";
+}
+.title{
+	color: #99cc66;
+}
+
+#menu{
+	margin-bottom: 1%;
+	border: 1px solid white;
+  	border-radius: 5px;
+	position: relative;
+	left: 20%;
+	width: 64%;
+	padding: 1%;
+}
+#menu a{
+	color: white;
+	text-decoration: none;	
+	font-weight: bold;
+	padding-right: 1%;
+	padding-left: 1%;
+}
+#menu a:hover{
+	color: #99cc66;
+	text-decoration: underline;
+}
+
+#post{
+	background-color: #1D1F21;
+	padding-right: 1%;
+	padding-left: 1%;
+	margin-left: 22%;
+	margin-right: 10%;
+	width: 60%;
+	border: 1px solid #303030;
+  	border-radius: 5px;
+	margin-bottom: 1%;
+	box-shadow: 5px 5px 10px black;
+}
+#post a{
+	color: white;
+	text-decoration: underline;
+}
+
+#post a:hover{
+	color: #99cc66;
+
+}
+
+.separador{
+	background-color: #303030;
+	height: 1px;
+}
+.data{
+	font-size: 15px;
+	padding-bottom: 1%;
+	padding-left: 1%;
+	font-weight: bold;
+}
+
+.lermais{
+	background-color: #202020;
+	padding: 1%;
+	width: 9%;
+	position: relative;
+	left: 85%;
+	border: 1px solid gray;
+	margin-bottom: 1%;
+}
+.lermais:hover{
+
+	background-color: grey;
+}
+
+
+#footbar{
+	margin: 5%;
+	text-align: center;
+	font-size: small
+}
+.style1 {
+	text-align: center;
+}
+
+
+#breadcrumbs{
+}
+

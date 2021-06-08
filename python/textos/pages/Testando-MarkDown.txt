@@ -1,0 +1,18 @@
+Testando MarkDown
+08/06/2021
+Testando pela MarkDown
+Testando *Italico* MAIS UMA FRASE LONGA :d
+**Negrito** Testando
+![label](url)
+#h1
+Ola a todos :)
+##h2
+###h3
+
+
+Outro *italico* rs mais coisa 
+
+Terei que criar um parser? D:
+
+Parece que sim rs;
+
