@@ -3,7 +3,9 @@ Testando MarkDown
 Testando pela MarkDown
 Testando *Italico* MAIS UMA FRASE LONGA :d
 **Negrito** Testando
-![label](url)
+![gatinho](https://neocities.org/img/heartcat.png)
+[google](https://www.google.com.br)
+Este é um link dentro de uma frase --> [google](https://www.google.com.br) E aqui acaba
 #h1
 Ola a todos :)
 ##h2

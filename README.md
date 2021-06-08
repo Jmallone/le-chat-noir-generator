@@ -23,9 +23,9 @@ Todo arquivo `.txt` dentro da pasta `python\textos\pages` será transformado em 
 
 Os arquivos `.txt` deve possuir a seguinte ordem:
 ```
-Primeira linha o Titulo
+Primeira ~linha: O Titulo
 Segunda Linha: A data
-A proximas Linhas o Corpo do post
+A proximas Linhas: O Corpo do post
 ```
 
 Exemplo:
@@ -59,6 +59,9 @@ Le chat noir possui suporte para algumas tags em Markdown, sendo elas:
 ## h2 `##h2`
 
 ### h3 `###h3`
+
+Link: `![gatinho](https://neocities.org/img/heartcat.png)`
+Imagem: `[google](https://www.google.com.br)`
 
 Novas tag em breve!
 

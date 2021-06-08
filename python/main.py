@@ -1,5 +1,6 @@
 import bs4
 import os
+import re
 import neocities
 from senha import senha
 nc = neocities.NeoCities(api_key=senha)
@@ -22,6 +23,8 @@ def change(el, text = '', tipo = 'normal', label = '', arq = ''):
         
     if tipo == "link":
         #text = "<a href='"+text+"'>"+label+"</a>"
+        
+        #criaTag(elemento, tag_name, label):
         text = soup.new_tag("a", href=text)
         text.string = label
         #print(text)
@@ -73,7 +76,29 @@ def toMarkDown(texto, elemento):
                 ''' h1 '''
                 criaTag(elemento, "h1", tmp)
             return 1 
-            
+        #elif p[0] == "!" and p[1] == "[":
+        elif p[-1] == ")" and (p[0]=="[" or p[0]=="!"):
+            ''' LINKS '''
+            label = re.findall(r"\[\w+\]", p)[0].replace("[", "").replace("]", "")    
+            link = re.findall(r"\(.+\)", p)[0].replace("(", "").replace(")", "")
+            #label = re.findall(r"\[\w+\]", p)    
+            #print(label)
+            #print(p)
+            if p[0] == "!":
+                ''' ACHOU UM LINK IMAGEM '''
+                #criaTag(elemento, "b", "Achei uma imagem")
+                tag = soup.new_tag("img", src=link)
+                #tag.string = label+" "
+
+            elif p[0] == "[":
+                ''' ACHOU UM LINK'''
+                #criaTag(elemento, "b", "Achei um Link")
+                tag = soup.new_tag("a", href=link)
+                tag.string = label
+            elemento.append(tag)
+            elemento.append(" ")
+
+                
         else:
             ''' Texto normal '''
             elemento.append(p+" ")
@@ -82,6 +107,10 @@ def toMarkDown(texto, elemento):
 
 #TODO criar um tipo link aqui
 def criaTag(elemento, tag_name, label):
+
+    #tag = soup.new_tag(tag_name, href=text)
+    #tag.string = label
+
     tag = soup.new_tag(tag_name)
     tag.string = label+" "
     elemento.append(tag)
