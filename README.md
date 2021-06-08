@@ -36,8 +36,8 @@ Aproveite
 ```
 
 * * *
-Para fazer o upload do site use o execute o arquivo `main.py`
-> python python/main.py
+Para fazer o upload do site use o execute o arquivo `python\main.py`
+> python main.py
 
 ## Características
 Le chat noir possui suporte para algumas tag em Markdown para ser usada no corpo dos posts entre elas:

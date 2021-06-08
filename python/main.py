@@ -178,10 +178,19 @@ montaPagina(paginas)
 
 nc.upload(('../site/index.html', 'index.html'))
 
+print("\n\n\n\n\n\n\n\n\n\n\n")
+le_chat = ("""
+_._     _,-'""`-._
+(,-.`._,'(       |\`-/|     Le Chat Noir
+    `-.-' \ )-`( , o o)
+          `-    \`_`"'-
+""")
 
-print("\n\n\n\n\n -------------------Uploading Posts:\n")
+print(le_chat)
+print("\n\n -------------------Uploading Posts:\n")
 
 for p in paginas:
     nc.upload((f"../site/pages/{p}.html", f"/pages/{p}.html"))
     print(f"Uploading... {p}")
 
+print("\n\n")
