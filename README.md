@@ -1,10 +1,12 @@
-# Le Chat Noir Generator
+# Le Chat Noir Generator :cat:
 Gerenciador de Páginas Estaticas para o [Neocities](hhtp://neocities.org/).
 
 ## Depedências
-> pip install neocities
 
-> pip install beautifulsoup4
+```bash
+pip install neocities
+pip install beautifulsoup4
+```
 
 ## Como usar
 
@@ -16,7 +18,8 @@ senha = "SUA_API_KEY_AKI"
 ```
 
 * * *
-Todo arquivo `.txt` dentro da pasta `python\textos\pages` será transformado em uma postagem e linkado no `index.hmtl`.
+### Criando um post
+Todo arquivo `.txt` dentro da pasta `python\textos\pages` será transformado em uma postagem e linkado no `index.html`.
 
 Os arquivos `.txt` deve possuir a seguinte ordem:
 ```
@@ -36,11 +39,16 @@ Aproveite
 ```
 
 * * *
-Para fazer o upload do site use o execute o arquivo `python\main.py`
-> python main.py
+
+### Upload para o Site
+Para fazer o upload das paginas geradas use o execute o arquivo `python\main.py`
+
+``` bash
+python main.py
+```
 
 ## Características
-Le chat noir possui suporte para algumas tag em Markdown para ser usada no corpo dos posts entre elas:
+Le chat noir possui suporte para algumas tags em Markdown, sendo elas:
 
 *italico* `*italico*`
 
