@@ -10,8 +10,10 @@ Gerenciador de Páginas Estaticas para o [Neocities](hhtp://neocities.org/).
 
 Para fazer upload no Neocities gere um API_KEY através do site `https://neocities.org/api` e crie um arquivo na pasta `python/` chamado `senha.py` com o seguinte conteudo:
 
-`python\senha.py`
-> senha = "SUA_API_KEY_AKI"
+```python
+# python\senha.py
+senha = "SUA_API_KEY_AKI"
+```
 
 * * *
 Todo arquivo `.txt` dentro da pasta `python\textos\pages` será transformado em uma postagem e linkado no `index.hmtl`.
@@ -53,4 +55,4 @@ Le chat noir possui suporte para algumas tag em Markdown para ser usada no corpo
 Novas tag em breve!
 
 ## Video Demo
-https://github.com/Jmallone/le-chat-noir-generator/blob/master/video.mp4
+https://user-images.githubusercontent.com/6977257/121244485-4cca7e80-c875-11eb-947f-66f62ea64597.mp4
