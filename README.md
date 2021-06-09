@@ -41,7 +41,7 @@ Aproveite
 * * *
 
 ### Upload para o Site
-Para fazer o upload das paginas geradas use o execute o arquivo `python\main.py`
+Para fazer o upload das paginas geradas execute o arquivo `python\main.py`
 
 ``` bash
 python main.py
@@ -54,14 +54,17 @@ Le chat noir possui suporte para algumas tags em Markdown, sendo elas:
 
 **negrito** `**negrito**`
 
+~~Taxado~~ `~~Taxado~~`
+
 # h1 `#h1`
 
 ## h2 `##h2`
 
 ### h3 `###h3`
 
-Link: `![gatinho](https://neocities.org/img/heartcat.png)`
-Imagem: `[google](https://www.google.com.br)`
+Imagem: `![gatinho](https://neocities.org/img/heartcat.png)`
+
+Link: `[google](https://www.google.com.br)`
 
 Novas tag em breve!
 
