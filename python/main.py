@@ -13,7 +13,6 @@ def change(el, text = '', tipo = 'normal', label = '', arq = ''):
 
     if tipo == "block":
         content = change_block(arq)
-        #el.append("<br>")
         for c in content:
             nextLine = toMarkDown(c, el[0])
             if nextLine != 1:
@@ -22,14 +21,9 @@ def change(el, text = '', tipo = 'normal', label = '', arq = ''):
         return 
         
     if tipo == "link":
-        #text = "<a href='"+text+"'>"+label+"</a>"
-        
-        #criaTag(elemento, tag_name, label):
         text = soup.new_tag("a", href=text)
         text.string = label
-        #print(text)
 
-	#<a href="<p id='home_link'></p>">home</a>&nbsp;
     for i in el:
         i.replace_with(text)
 
@@ -43,6 +37,7 @@ def change_block(arq):
 def toMarkDown(texto, elemento):
     ''' FIX: Quando tem 2 espaços tem que manter um'''
     palavras = texto.split(" ")
+
     if palavras == ['']:
         return 
 
@@ -53,14 +48,15 @@ def toMarkDown(texto, elemento):
         '''
             FORMATACAO DO TEXTO
         '''
-        if p[0] == "*" and p[-1] == "*":
-            tmp = p.replace("*","")
+        if p[0] == "*":
             if p[1] == "*":
                 ''' Negrito '''
+                tmp = fraseMarcacao(palavras,p, "*")
                 criaTag(elemento, "b", tmp)
                 pass
             else:
                 ''' Italico '''
+                tmp = fraseMarcacao(palavras,p, "*")
                 criaTag(elemento, "i", tmp)
                 pass        
 
@@ -76,48 +72,65 @@ def toMarkDown(texto, elemento):
                 ''' h1 '''
                 criaTag(elemento, "h1", tmp)
             return 1 
-        #elif p[0] == "!" and p[1] == "[":
+
         elif p[-1] == ")" and (p[0]=="[" or p[0]=="!"):
             ''' LINKS '''
             label = re.findall(r"\[\w+\]", p)[0].replace("[", "").replace("]", "")    
             link = re.findall(r"\(.+\)", p)[0].replace("(", "").replace(")", "")
+
             if p[0] == "!":
                 ''' ACHOU UM LINK IMAGEM '''
                 tag = soup.new_tag("img", src=link)
 
             elif p[0] == "[":
                 ''' ACHOU UM LINK'''
-                #criaTag(elemento, "b", "Achei um Link")
                 tag = soup.new_tag("a", href=link)
                 tag.string = label
+
             elemento.append(tag)
             elemento.append(" ")
 
         elif p[0] == "~":
-            comeco = -1
-            fim = -1
-            for i in palavras:
-                if i[-1] == "~":
-                    fim = palavras.index(i)
-            comeco = palavras.index(p)
-            #print(f"C {comeco} : F {fim}")
-            #print(palavras)
-            if fim != -1:
-                ''' ~~Pega Frases Longas e retira da Lista `Palavras` '''
-                tmp = " ".join(palavras[comeco:fim+1]).replace("~", "")
-                del palavras[comeco:fim]
-            else: 
-                ''' ~Pega~ palavras singulares '''
-                tmp = p.replace("~", "")
-
+            ''' TAXADO '''
+            tmp = fraseMarcacao(palavras,p, "~")
             criaTag(elemento, "s", tmp)
+
         else:
             ''' Texto normal '''
             elemento.append(p+" ")
    
     return 
 
-#TODO criar um tipo link aqui
+def fraseMarcacao(palavras,p, marca):
+    '''
+        palavras = ['Oi', '~~Aqui','esta', 'taxado~~', 'fim!']
+        retira o ~~Aqui esta taxado~ da palavras
+        -------------------------------
+        return "Aqui esta taxado"
+    '''
+    comeco = -1
+    fim = -1
+
+    #As vezes se vier o final '' buga por isso tira logo ele 
+    if palavras[-1] == '':
+        del palavras[-1]
+
+    for i in palavras:
+        if i[-1] == marca:
+            fim = palavras.index(i)
+    comeco = palavras.index(p)
+    if fim != -1:
+        ''' ~~Pega Frases Longas e retira da Lista `Palavras` '''
+        tmp = " ".join(palavras[comeco:fim+1]).replace(marca, "")
+        del palavras[comeco:fim]
+    else: 
+        ''' ~Pega~ palavras singulares '''
+        tmp = p.replace("~", "")
+
+
+    return tmp
+
+
 def criaTag(elemento, tag_name, label):
 
     #tag = soup.new_tag(tag_name, href=text)

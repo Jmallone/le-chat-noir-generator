@@ -23,7 +23,7 @@ Todo arquivo `.txt` dentro da pasta `python\textos\pages` será transformado em 
 
 Os arquivos `.txt` deve possuir a seguinte ordem:
 ```
-Primeira ~linha: O Titulo
+Primeira Linha: O Titulo
 Segunda Linha: A data
 A proximas Linhas: O Corpo do post
 ```

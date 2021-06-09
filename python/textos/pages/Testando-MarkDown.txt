@@ -19,9 +19,14 @@ Texto antes de ficar ~~Taxado~~ texto depois
 
 ~~Sozin~~
 
+No meio de uma frase aparece **BOLD FRASE** e depois ?
+A mesma coisa com *ITALIC FRASE* e agora ?
+
 Outro *italico* rs mais coisa 
 
 Terei que criar um parser? D:
+
+Dois **negritos** em uma mesma **frase** :D
 
 Parece que sim rs;
 

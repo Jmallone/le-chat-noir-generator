@@ -5,8 +5,8 @@ Lista de coisas que ainda tenho que implementar
 
 ##MarkDown
 Citação: > Quote
-Imagem: ![label](url)
-Link: [label](url)
+~~Imagem: ![label](url)~~
+~~Link: [label](url)~~
 Barra: !-
 Codigo: `int a = 6`
 Tachado: ~~Tachado~~
@@ -26,4 +26,6 @@ home https://www.google.com/
 twitter https://www.twitter.com
 outra_pagina www.outraPagina.com
 
-> Funciona para **Negrito** mas não para **Uma frase aqui**
+~~> Funciona para **Negrito** mas não para **Uma frase aqui**~~
+> Não consegue deixar 2 Negritos em uma mesma frase: def fraseMarcacao(palavras,p, marca):
+
