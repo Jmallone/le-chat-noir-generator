@@ -9,6 +9,7 @@ Imagem: ![label](url)
 Link: [label](url)
 Barra: !-
 Codigo: `int a = 6`
+Tachado: ~~Tachado~~
 
 ##Implementação
 > quando tem dois espaços na mesma linha acaba perdendo o que esta a frente!
@@ -18,3 +19,11 @@ Codigo: `int a = 6`
 
 > Allposts: Aparecer o Ultimo
 
+> Menu Diferente:
+------- Talvez um unico documento contento a label e o Link
+------- exemplo: 
+home https://www.google.com/
+twitter https://www.twitter.com
+outra_pagina www.outraPagina.com
+
+> Funciona para **Negrito** mas não para **Uma frase aqui**

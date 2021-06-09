@@ -11,6 +11,13 @@ Ola a todos :)
 ##h2
 ###h3
 
+~~Tem que ficar Taxado~~
+
+Letras antes da Frase ~~Uma frase grande Aqui~~ e depois continua.
+
+Texto antes de ficar ~~Taxado~~ texto depois
+
+~~Sozin~~
 
 Outro *italico* rs mais coisa 
 

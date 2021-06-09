@@ -81,14 +81,9 @@ def toMarkDown(texto, elemento):
             ''' LINKS '''
             label = re.findall(r"\[\w+\]", p)[0].replace("[", "").replace("]", "")    
             link = re.findall(r"\(.+\)", p)[0].replace("(", "").replace(")", "")
-            #label = re.findall(r"\[\w+\]", p)    
-            #print(label)
-            #print(p)
             if p[0] == "!":
                 ''' ACHOU UM LINK IMAGEM '''
-                #criaTag(elemento, "b", "Achei uma imagem")
                 tag = soup.new_tag("img", src=link)
-                #tag.string = label+" "
 
             elif p[0] == "[":
                 ''' ACHOU UM LINK'''
@@ -98,7 +93,24 @@ def toMarkDown(texto, elemento):
             elemento.append(tag)
             elemento.append(" ")
 
-                
+        elif p[0] == "~":
+            comeco = -1
+            fim = -1
+            for i in palavras:
+                if i[-1] == "~":
+                    fim = palavras.index(i)
+            comeco = palavras.index(p)
+            #print(f"C {comeco} : F {fim}")
+            #print(palavras)
+            if fim != -1:
+                ''' ~~Pega Frases Longas e retira da Lista `Palavras` '''
+                tmp = " ".join(palavras[comeco:fim+1]).replace("~", "")
+                del palavras[comeco:fim]
+            else: 
+                ''' ~Pega~ palavras singulares '''
+                tmp = p.replace("~", "")
+
+            criaTag(elemento, "s", tmp)
         else:
             ''' Texto normal '''
             elemento.append(p+" ")
@@ -221,5 +233,5 @@ print("\n\n -------------------Uploading Posts:\n")
 for p in paginas:
     nc.upload((f"../site/pages/{p}.html", f"/pages/{p}.html"))
     print(f"Uploading... {p}")
-
-print("\n\n")
+# curl -H "Authorization: Bearer API_KEY" https://neocities.org/api/list?path=pages
+print("\n")
