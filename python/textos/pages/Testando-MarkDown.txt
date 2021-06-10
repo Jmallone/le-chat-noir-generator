@@ -11,6 +11,9 @@ Ola a todos :)
 ##h2
 ###h3
 
+[Link do Projeto no GitHub](https://github.com/Jmallone/le-chat-noir-generator)
+[GitHub](https://github.com/Jmallone/le-chat-noir-generator)
+
 ~~Tem que ficar Taxado~~
 
 Letras antes da Frase ~~Uma frase grande Aqui~~ e depois continua.

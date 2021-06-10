@@ -7,6 +7,7 @@ Lista de coisas que ainda tenho que implementar
 Citação: > Quote
 ~~Imagem: ![label](url)~~
 ~~Link: [label](url)~~
+~~Link com Label Grande: [Label bem grande com espaço](url)~~ 
 Barra: !-
 ~~Codigo: `int a = 6`~~
 Codigo em Bloco: 

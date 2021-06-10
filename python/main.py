@@ -35,8 +35,13 @@ def change_block(arq):
     return arq.read().split('\n')
 
 def toMarkDown(texto, elemento):
-    ''' FIX: Quando tem 2 espaços tem que manter um'''
-    palavras = texto.split(" ")
+    
+    if texto != "" and texto[0] == '[' and texto[-1] == ")":
+        palavras = []
+        palavras.append(texto)
+    else:
+        ''' FIX: Quando tem 2 espaços tem que manter um'''
+        palavras = texto.split(" ")
 
     if palavras == ['']:
         return 
@@ -75,25 +80,21 @@ def toMarkDown(texto, elemento):
 
         elif p[-1] == ")" and (p[0]=="[" or p[0]=="!"):
             ''' LINKS '''
-            label = re.findall(r"\[\w+\]", p)[0].replace("[", "").replace("]", "")    
-            link = re.findall(r"\(.+\)", p)[0].replace("(", "").replace(")", "")
 
-            if p[0] == "!":
-                ''' ACHOU UM LINK IMAGEM '''
-                #tag = soup.new_tag("img", src=link)
-                attr = {"src": link}
-                criaTag(elemento, "img", "", attr)
+            if texto != "" and texto[0] == '[' and texto[-1] == ")":
 
+                label = re.findall(r"\[.+\]", p)[0].replace("[", "").replace("]", "")    
+                link = re.findall(r"\(.+\)", p)[0].replace("(", "").replace(")", "")
 
-            elif p[0] == "[":
-                ''' ACHOU UM LINK'''
-                #tag = soup.new_tag("a", href=link)
-                #tag.string = label
-                attr = {"href": link}
-                criaTag(elemento, "a", label, attr)
+                if p[0] == "!":
+                    ''' ACHOU UM LINK IMAGEM '''
+                    attr = {"src": link}
+                    criaTag(elemento, "img", "", attr)
 
-            #elemento.append(tag)
-            #elemento.append(" ")
+                elif p[0] == "[":
+                    ''' ACHOU UM LINK'''
+                    attr = {"href": link}
+                    criaTag(elemento, "a", label, attr)
 
         elif p[0] == "~":
             ''' TAXADO '''
@@ -147,8 +148,10 @@ def fraseMarcacao(palavras,p, marca):
 
 def criaTag(elemento, tag_name, label, attr={}):
 
-    #tag = soup.new_tag(tag_name, href=text)
-    #tag.string = label
+    '''
+        Cria um tag do tipo TAG_NAME
+        e adiciona um espaco na frente dessa nova tag
+    '''
     tag = soup.new_tag(tag_name, attrs=attr)
     tag.string = label
     elemento.append(tag)
