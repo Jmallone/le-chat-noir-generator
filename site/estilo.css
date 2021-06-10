@@ -75,6 +75,29 @@ body{
 	background-color: grey;
 }
 
+.code{
+    font-family: Monaco, "Consolas", "Bitstream Vera Sans Mono", "Courier New", Courier, monospace !important;
+    border-spacing: 0;
+    border-style: none inset none inset;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.numero{
+	background-color: 383830;
+    /* font-weight: bold  */
+    color: 75715e;
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+.container{
+    background-color: 272822;
+    color: f4bf75;
+    padding-right: 5px;
+    padding-left: 10px;
+
+}
 
 #footbar{
 	margin: 5%;

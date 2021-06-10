@@ -1,5 +1,5 @@
 # Le Chat Noir Generator :cat:
-Gerenciador de Páginas Estaticas para o [Neocities](hhtp://neocities.org/).
+Gerador de Páginas Estaticas para o [Neocities](hhtp://neocities.org/).
 
 ## Depedências
 
