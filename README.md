@@ -56,6 +56,8 @@ Le chat noir possui suporte para algumas tags em Markdown, sendo elas:
 
 ~~Taxado~~ `~~Taxado~~`
 
+`Codigo simples`  \`Codigo Simples\`  
+
 # h1 `#h1`
 
 ## h2 `##h2`

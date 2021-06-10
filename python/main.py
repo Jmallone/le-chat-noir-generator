@@ -80,15 +80,20 @@ def toMarkDown(texto, elemento):
 
             if p[0] == "!":
                 ''' ACHOU UM LINK IMAGEM '''
-                tag = soup.new_tag("img", src=link)
+                #tag = soup.new_tag("img", src=link)
+                attr = {"src": link}
+                criaTag(elemento, "img", "", attr)
+
 
             elif p[0] == "[":
                 ''' ACHOU UM LINK'''
-                tag = soup.new_tag("a", href=link)
-                tag.string = label
+                #tag = soup.new_tag("a", href=link)
+                #tag.string = label
+                attr = {"href": link}
+                criaTag(elemento, "a", label, attr)
 
-            elemento.append(tag)
-            elemento.append(" ")
+            #elemento.append(tag)
+            #elemento.append(" ")
 
         elif p[0] == "~":
             ''' TAXADO '''
@@ -97,18 +102,12 @@ def toMarkDown(texto, elemento):
         
         elif p == "```":
             ''' Bloco Codigo '''
-            criaTag(elemento, "p", "BLOCO CODIGO")
+            criaTag(elemento, "p", "BLOCO--CODIGO")
 
         elif p[0] == "`":
             tmp = fraseMarcacao(palavras,p, "`")
-
-            #TODO colocar isso no criaTag
-            tag = soup.new_tag("span",attrs={"class": "codigo_single"})
-            tag.string = tmp
-            elemento.append(tag)
-            elemento.append(" ")
-            #<div class="codigo">a = 5 </div>
-            #criaTag(elemento, "s", tmp)
+            attr = {"class": "codigo_single"}
+            criaTag(elemento, "span", tmp, attr)
 
         else:
             ''' Texto normal '''
@@ -146,14 +145,14 @@ def fraseMarcacao(palavras,p, marca):
     return tmp
 
 
-def criaTag(elemento, tag_name, label):
+def criaTag(elemento, tag_name, label, attr={}):
 
     #tag = soup.new_tag(tag_name, href=text)
     #tag.string = label
-
-    tag = soup.new_tag(tag_name)
-    tag.string = label+" "
+    tag = soup.new_tag(tag_name, attrs=attr)
+    tag.string = label
     elemento.append(tag)
+    elemento.append(" ")
 
 def montaHeader():
     '''
