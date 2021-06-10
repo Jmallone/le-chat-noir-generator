@@ -36,11 +36,13 @@ def change_block(arq):
 
 def toMarkDown(texto, elemento):
     
-    if texto != "" and texto[0] == '[' and texto[-1] == ")":
+    if texto != "" and (texto[0] == '[' or texto[0] == "!") and texto[-1] == ")":
+        ''' Para Links com Frases Grandes ''' 
         palavras = []
         palavras.append(texto)
     else:
-        ''' FIX: Quando tem 2 espaços tem que manter um'''
+        #TODO: Quando tem 2 espaços tem que manter um'''
+        ''' O restante do conteudo '''
         palavras = texto.split(" ")
 
     if palavras == ['']:
@@ -81,26 +83,29 @@ def toMarkDown(texto, elemento):
         elif p[-1] == ")" and (p[0]=="[" or p[0]=="!"):
             ''' LINKS '''
 
-            if texto != "" and texto[0] == '[' and texto[-1] == ")":
+                
+            label = re.findall(r"\[.+\]", p)[0].replace("[", "").replace("]", "")    
+            link = re.findall(r"\(.+\)", p)[0].replace("(", "").replace(")", "")
 
-                label = re.findall(r"\[.+\]", p)[0].replace("[", "").replace("]", "")    
-                link = re.findall(r"\(.+\)", p)[0].replace("(", "").replace(")", "")
+            if p[0] == "!":
+                ''' ACHOU UM LINK IMAGEM '''
+                attr = {"src": link}
+                criaTag(elemento, "img", "", attr)
 
-                if p[0] == "!":
-                    ''' ACHOU UM LINK IMAGEM '''
-                    attr = {"src": link}
-                    criaTag(elemento, "img", "", attr)
-
-                elif p[0] == "[":
-                    ''' ACHOU UM LINK'''
-                    attr = {"href": link}
-                    criaTag(elemento, "a", label, attr)
+            elif p[0] == "[":
+                ''' ACHOU UM LINK'''
+                attr = {"href": link}
+                criaTag(elemento, "a", label, attr)
 
         elif p[0] == "~":
             ''' TAXADO '''
             tmp = fraseMarcacao(palavras,p, "~")
             criaTag(elemento, "s", tmp)
         
+        elif p == "!---":
+            ''' HR '''
+            criaTag(elemento, "hr", "")
+
         elif p == "```":
             ''' Bloco Codigo '''
             criaTag(elemento, "p", "BLOCO--CODIGO")
