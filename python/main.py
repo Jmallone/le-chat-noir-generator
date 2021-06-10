@@ -94,6 +94,21 @@ def toMarkDown(texto, elemento):
             ''' TAXADO '''
             tmp = fraseMarcacao(palavras,p, "~")
             criaTag(elemento, "s", tmp)
+        
+        elif p == "```":
+            ''' Bloco Codigo '''
+            criaTag(elemento, "p", "BLOCO CODIGO")
+
+        elif p[0] == "`":
+            tmp = fraseMarcacao(palavras,p, "`")
+
+            #TODO colocar isso no criaTag
+            tag = soup.new_tag("span",attrs={"class": "codigo_single"})
+            tag.string = tmp
+            elemento.append(tag)
+            elemento.append(" ")
+            #<div class="codigo">a = 5 </div>
+            #criaTag(elemento, "s", tmp)
 
         else:
             ''' Texto normal '''

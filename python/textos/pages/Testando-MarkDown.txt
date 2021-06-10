@@ -30,3 +30,11 @@ Dois **negritos** em uma mesma **frase** :D
 
 Parece que sim rs;
 
+```
+Codigo aqui
+Segunda linha
+```
+
+`Codigo Simples`
+No meio de uma frase `Codigo Simples` Fim da Frase
+

@@ -8,7 +8,12 @@ Citação: > Quote
 ~~Imagem: ![label](url)~~
 ~~Link: [label](url)~~
 Barra: !-
-Codigo: `int a = 6`
+~~Codigo: `int a = 6`~~
+Codigo em Bloco: 
+```
+Linha do Codigo 1
+Linha do Codigo 2
+```
 Tachado: ~~Tachado~~
 
 ##Implementação
