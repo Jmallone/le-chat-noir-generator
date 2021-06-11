@@ -33,5 +33,6 @@ twitter https://www.twitter.com
 outra_pagina www.outraPagina.com
 
 ~~> Funciona para **Negrito** mas não para **Uma frase aqui**~~
-> Não consegue deixar 2 Negritos em uma mesma frase: def fraseMarcacao(palavras,p, marca):
-> tag !--- tem um br abaixo dela 
+~~> Não consegue deixar 2 Negritos em uma mesma frase: def fraseMarcacao(palavras,p, marca):~~
+~~> tag !--- tem um br abaixo dela `Talves seja o #h1`~~
+> #h1 com um enter emcima dele

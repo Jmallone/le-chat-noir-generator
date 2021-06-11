@@ -2,7 +2,7 @@ Testando MarkDown
 08/06/2021
 Testando pela MarkDown
 Testando *Italico* MAIS UMA FRASE LONGA :d
-**Negrito** Testando
+**Negrito** TestandoX aqui
 ![gatinho](https://neocities.org/img/heartcat.png)
 [google](https://www.google.com.br)
 Este é um link dentro de uma frase --> [google](https://www.google.com.br) E aqui acaba
@@ -31,6 +31,7 @@ Outro *italico* rs mais coisa
 
 Terei que criar um parser? D:
 Dois **negritos** em uma mesma **frase** :D
+Dois **negritos** em uma mesma **frase** Ola mundo isso é um texto :D
 
 plavra  Dois espaços
 Parece que sim rs;
@@ -44,3 +45,5 @@ Segunda linha
 No meio de uma frase `Codigo Simples` Fim da Frase
   
 **OLA MUNDO!**
+
+ola tenho  Dois espaços  Aqui tambem!

@@ -41,6 +41,7 @@ def toMarkDown(texto, elemento):
         palavras = []
         palavras.append(texto)
     else:
+        #TODO: Quando tem 2 espaços tem que manter um'''
         ''' O restante do conteudo '''
         palavras = texto.split(" ")
 
@@ -49,9 +50,7 @@ def toMarkDown(texto, elemento):
 
     for p in palavras:
         if p == '':
-            #TODO dois espaços
-            elemento.append(" ")
-            continue 
+            return 
     
         '''
             FORMATACAO DO TEXTO
@@ -119,6 +118,8 @@ def toMarkDown(texto, elemento):
 
         else:
             ''' Texto normal '''
+            if p == "TestandoX":
+                print("OOO")
             elemento.append(p+" ")
    
     return 
@@ -134,7 +135,7 @@ def fraseMarcacao(palavras,p, marca):
     comeco = -1
     fim = -1
 
-    #TODO As vezes se vier o final '' buga por isso tira logo ele 
+    #As vezes se vier o final '' buga por isso tira logo ele 
     if palavras[-1] == '':
         del palavras[-1]
     
@@ -148,12 +149,12 @@ def fraseMarcacao(palavras,p, marca):
     tmp = " ".join(palavras[comeco:fim+1]).replace(marca, "")
     
     if comeco == fim:
-        '''
-        se não colocar o " ", 
-        o P vai pro proximo elemento quando tem 2 tags na mesma frase
-        '''
+        #palavras.pop(comeco)
+        #print(f"P: {palavras[comeco]}")
+        #print(f"p: {p}")
         del palavras[comeco]
-        palavras.insert(0," ")
+        palavras.insert(0,"")
+        print(palavras)
     else:
         del palavras[comeco:fim]
 
