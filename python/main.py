@@ -51,7 +51,7 @@ def toMarkDown(texto, elemento, content):
         if p == '':
             ''' DOIS ESPAÇOS '''
             markup = "&nbsp;"
-            s = bs4.BeautifulSoup(markup)
+            s = bs4.BeautifulSoup(markup, "html.parser")
             elemento.append(s)
             continue 
     
@@ -138,7 +138,7 @@ def toMarkDown(texto, elemento, content):
 
         elif p[0] == "¬":
             tab = "&nbsp;&nbsp;&nbsp; > "
-            s = bs4.BeautifulSoup(tab)
+            s = bs4.BeautifulSoup(tab, "html.parser")
             elemento.append(s)
 
         else:
@@ -271,12 +271,12 @@ def montaPagina(paginas):
    global soup 
    with open("../site/index.html") as info:
         txt = info.read()
-        soup_index = bs4.BeautifulSoup(txt)
+        soup_index = bs4.BeautifulSoup(txt, "html.parser")
 
    for p in paginas:
         with open("template/template-post.html") as inf:
             txt = inf.read()
-            soup = bs4.BeautifulSoup(txt)
+            soup = bs4.BeautifulSoup(txt, "html.parser")
 
         post_f = open(f"textos/pages/{p}.txt")
         titulo = post_f.readline().replace("\n","")
@@ -305,7 +305,7 @@ def montaPagina(paginas):
 global soup
 with open("template/template-index.html") as inf:
     txt = inf.read()
-    soup = bs4.BeautifulSoup(txt)
+    soup = bs4.BeautifulSoup(txt,"html.parser")
 
 '''
         Name and Menu bar

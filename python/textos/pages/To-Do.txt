@@ -21,7 +21,6 @@ Linha do Codigo 2
 ~~centralizar uma imagem: !c[label](url)~~
 ~~Tabulacao com >: `¬`~~
 
-
 ##Implementação & Erros
 ~~¬ quando tem dois espaços na mesma linha acaba perdendo o que esta a frente!~~
 
