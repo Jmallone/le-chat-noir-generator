@@ -14,7 +14,7 @@ def change(el, text = '', tipo = 'normal', label = '', arq = ''):
     if tipo == "block":
         content = change_block(arq)
         for c in content:
-            nextLine = toMarkDown(c, el[0])
+            nextLine = toMarkDown(c, el[0], content)
             if nextLine != 1:
                 br = soup.new_tag("br")
                 el[0].append(br)
@@ -34,7 +34,7 @@ def sub(elemento, texto = '', tipo = 'normal', label = '', arq = ''):
 def change_block(arq):
     return arq.read().split('\n')
 
-def toMarkDown(texto, elemento):
+def toMarkDown(texto, elemento, content):
     
     if texto != "" and (texto[0] == '[' or texto[0] == "!") and texto[-1] == ")":
         ''' Para Links com Frases Grandes ''' 
@@ -110,7 +110,8 @@ def toMarkDown(texto, elemento):
 
         elif p == "```":
             ''' Bloco Codigo '''
-            criaTag(elemento, "p", "BLOCO--CODIGO")
+            #criaTag(elemento, "p", "BLOCO--CODIGO")
+            bloco_codigo =  blocoMarcacao(content, p , "```")
 
         elif p[0] == "`":
             tmp = fraseMarcacao(palavras,p, "`")
@@ -123,6 +124,31 @@ def toMarkDown(texto, elemento):
    
     return 
 
+def blocoMarcacao(content, p, marca):
+    '''
+            ira pegar os blocos de codigo
+            ``` 
+            Linha 1
+            Linha 2
+            linha 3
+            ```
+            retirar eles de content 
+            -----------
+            retorn ['Linha1', 'Linha2', 'Linha3']
+    '''
+    print("BLOCO DE CODIGO")
+    inicio = content.index(p)
+    fim = -1
+
+    for i in content[inicio+1:]:
+        if i == marca and fim == -1:
+            fim = content[inicio+1:].index(i)
+    fim =  inicio+fim
+
+    tmp = content[inicio+1:fim+1]
+    del content[inicio-1:fim+1]
+
+    return tmp
 def fraseMarcacao(palavras,p, marca):
     '''
         palavras = ['Oi', '~~Aqui','esta', 'taxado~~', 'fim!']
