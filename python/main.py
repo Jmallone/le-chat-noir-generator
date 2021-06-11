@@ -122,6 +122,11 @@ def toMarkDown(texto, elemento, content):
             attr = {"class": "codigo_single"}
             criaTag(elemento, "span", tmp, attr)
 
+        elif p[0] == "¬":
+            tab = "&nbsp;&nbsp;&nbsp; > "
+            s = bs4.BeautifulSoup(tab)
+            elemento.append(s)
+
         else:
             ''' Texto normal '''
             elemento.append(p+" ")

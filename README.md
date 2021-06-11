@@ -56,6 +56,7 @@ Le chat noir possui suporte para algumas tags em Markdown, sendo elas:
 | **Negrito**      | `**Negrito**`                                        |
 | ~~Taxado~~       | `~~Taxado~~`                                         |
 | Barra Vertical   | `!---`                                               |
+| > Tabulacao com >| `¬ Tabulacao com >`                                  |
 | `Codigo Simples` | \`Codigo Simples\`                                   |
 | ``Codigo Simples``| \`\`\`Codigo Simples\`\`\`                          |
 | Imagem           | `![gatinho](https://neocities.org/img/heartcat.png)` |
