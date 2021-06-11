@@ -110,8 +110,8 @@ def toMarkDown(texto, elemento, content):
 
         elif p == "```":
             ''' Bloco Codigo '''
-            #criaTag(elemento, "p", "BLOCO--CODIGO")
             bloco_codigo =  blocoMarcacao(content, p , "```")
+            escreveBloco(elemento, bloco_codigo)
 
         elif p[0] == "`":
             tmp = fraseMarcacao(palavras,p, "`")
@@ -123,6 +123,27 @@ def toMarkDown(texto, elemento, content):
             elemento.append(p+" ")
    
     return 
+def escreveBloco(elemento, bloco_codigo):
+    '''
+        Pega o bloco e monta nas tags html correspondentes
+    '''
+    numero_linhas = len(bloco_codigo)
+    attr = {"class": "code"}
+    table  = criaTag(elemento, "table", "", attr)
+
+    attr = {"class": "numero"}
+    td_numero = criaTag(table, "td", "", attr)
+
+    attr = {"class": "container"}
+    td_container = criaTag(table, "td", "", attr)
+
+    for i in range(numero_linhas):
+        attr = {"class": "linha"}
+        criaTag(td_numero, "div", str(i+1), attr)
+
+    for i in bloco_codigo:
+        attr = {"class": "codigo"}
+        criaTag(td_container, "div", i, attr)
 
 def blocoMarcacao(content, p, marca):
     '''
@@ -136,7 +157,6 @@ def blocoMarcacao(content, p, marca):
             -----------
             retorn ['Linha1', 'Linha2', 'Linha3']
     '''
-    print("BLOCO DE CODIGO")
     inicio = content.index(p)
     fim = -1
 
@@ -191,11 +211,14 @@ def criaTag(elemento, tag_name, label, attr={}):
     '''
         Cria um tag do tipo TAG_NAME
         e adiciona um espaco na frente dessa nova tag
+        ---------------
+        return tag_criada
     '''
     tag = soup.new_tag(tag_name, attrs=attr)
     tag.string = label
     elemento.append(tag)
     elemento.append(" ")
+    return tag
 
 def montaHeader():
     '''

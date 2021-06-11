@@ -35,10 +35,12 @@ Dois **negritos** em uma mesma **frase** Ola mundo isso é um texto :D
 
 plavra  Dois espaços
 Parece que sim rs;
-
 ```
-Codigo aqui
-Segunda linha
+#Codigo aqui
+#Segunda linha
+a = 15
+a = a + 5
+print(f"Soma de A: {a}")
 ```
 
 `Codigo Simples`

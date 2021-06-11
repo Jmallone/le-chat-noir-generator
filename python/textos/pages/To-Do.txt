@@ -10,7 +10,7 @@ Citação: > Quote
 ~~Link com Label Grande: [Label bem grande com espaço](url)~~ 
 ~~Barra: !--- ~~~
 ~~Codigo: `int a = 6`~~
-Codigo em Bloco: 
+~~Codigo em Bloco: ~~
 ```
 Linha do Codigo 1
 Linha do Codigo 2
