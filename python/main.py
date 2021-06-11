@@ -95,7 +95,14 @@ def toMarkDown(texto, elemento, content):
 
             if p[0] == "!":
                 ''' ACHOU UM LINK IMAGEM '''
+                
                 attr = {"src": link}
+
+                if p[1] == "c":
+                    print("\n\n\n Vamos Centralizar isso ai ")
+                    center = "display: block; margin-left: auto; margin-right: auto;"
+                    attr = {"src": link, "style": center}
+
                 criaTag(elemento, "img", "", attr)
 
             elif p[0] == "[":

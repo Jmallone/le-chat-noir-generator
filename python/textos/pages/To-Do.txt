@@ -18,8 +18,8 @@ Linha do Codigo 2
 
 ### le chat tag
 ~~Barra: !--- ~~
-centralizar uma imagem: !c[label](url)
-Tabulacao com >: `¬`
+~~centralizar uma imagem: !c[label](url)~~
+~~Tabulacao com >: `¬`~~
 
 
 ##Implementação & Erros
