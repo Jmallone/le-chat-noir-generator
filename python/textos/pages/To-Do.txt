@@ -23,26 +23,26 @@ Linha do Codigo 2
 
 
 ##Implementação & Erros
-¬ quando tem dois espaços na mesma linha acaba perdendo o que esta a frente!
+~~¬ quando tem dois espaços na mesma linha acaba perdendo o que esta a frente!~~
 
 ¬ apaga os posts tanto do pc como do servidor
-¬ ¬ nc.delete('filename1', ...)
+    nc.delete('filename1', ...)
 
-¬ Allposts: Aparecer o Ultimo
-
+¬ Allposts: A postagem com data mais recente aparecer no topo
+     Colocar o designer das postagem tipo [isso](https://parasurv.neocities.org/linux.html)
 ¬ Menu Diferente:
-    Talvez um unico documento contento a label e o Link
-    exemplo: 
-    ¬ home https://www.google.com/
-    ¬ twitter https://www.twitter.com
-    ¬ outra_pagina www.outraPagina.com
+     Talvez um unico documento contendo a label e o Link
+     exemplo: 
+         home https://www.google.com/
+         twitter https://www.twitter.com
+         outra_pagina www.outraPagina.com
 
 ~~¬ Funciona para **Negrito** mas não para **Uma frase aqui**~~
 ~~¬ Não consegue deixar 2 Negritos em uma mesma frase: def fraseMarcacao(palavras,p, marca):~~
 ~~¬ tag !--- tem um br abaixo dela `Talves seja o #h1`~~
 
 ~~¬ #h1 com um enter emcima dele ~~
-¬ se colocar taxado `~~ >` ele cria um >na linha de cima
-¬ Não funciona colocar dois `codigo simples` em uma `mesma` frase
+~~¬ se colocar taxado `~~ >` ele cria um >na linha de cima ~~
+~~¬ Não funciona colocar dois `codigo simples` em uma `mesma` frase~~
 
 

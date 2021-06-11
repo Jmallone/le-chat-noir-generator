@@ -97,9 +97,9 @@ def toMarkDown(texto, elemento, content):
                 ''' ACHOU UM LINK IMAGEM '''
                 
                 attr = {"src": link}
-
+                
+                ''' Centraliza a imagem '''
                 if p[1] == "c":
-                    print("\n\n\n Vamos Centralizar isso ai ")
                     center = "display: block; margin-left: auto; margin-right: auto;"
                     attr = {"src": link, "style": center}
 
@@ -125,7 +125,14 @@ def toMarkDown(texto, elemento, content):
             escreveBloco(elemento, bloco_codigo)
 
         elif p[0] == "`":
+            
+
             tmp = fraseMarcacao(palavras,p, "`")
+            
+            if p == "`mesma`":
+                print("Entrou")
+                print(f"TMP: {tmp}")
+                print(palavras)
             attr = {"class": "codigo_single"}
             criaTag(elemento, "span", tmp, attr)
 
@@ -185,6 +192,7 @@ def blocoMarcacao(content, p, marca):
     del content[inicio-1:fim+1]
 
     return tmp
+
 def fraseMarcacao(palavras,p, marca):
     '''
         palavras = ['Oi', '~~Aqui','esta', 'taxado~~', 'fim!']
@@ -214,14 +222,15 @@ def fraseMarcacao(palavras,p, marca):
     tmp = " ".join(palavras[comeco:fim+1]).replace(marca, "")
     
     if comeco == fim:
-        '''
+       del palavras[comeco]
+    else:
+        del palavras[comeco:fim+1]
+
+    '''
         se não colocar o " ", 
         o P vai pro proximo elemento quando tem 2 tags na mesma frase
-        '''
-        del palavras[comeco]
-        palavras.insert(0," ")
-    else:
-        del palavras[comeco:fim]
+    '''
+    palavras.insert(0," ")
 
     return tmp
 
