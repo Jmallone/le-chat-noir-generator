@@ -93,7 +93,8 @@ body{
 
 .container{
     background-color: 272822;
-    color: f4bf75;
+    /* color: f4bf75; */
+    color: lightgreen;
     padding-right: 5px;
     padding-left: 10px;
 
@@ -101,7 +102,7 @@ body{
 
 .codigo_single{
     background-color: 272822;
-    color: f4bf75;
+    color: lightgreen;
     padding-right: 5px;
     padding-left: 5px;
    

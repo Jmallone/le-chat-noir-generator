@@ -55,6 +55,7 @@ Le chat noir possui suporte para algumas tags em Markdown, sendo elas:
 | *Italico*        | `*italico*`                                          |
 | **Negrito**      | `**Negrito**`                                        |
 | ~~Taxado~~       | `~~Taxado~~`                                         |
+| Barra Vertical   | `!---`                                     |
 | `Codigo Simples` | \`Codigo Simples\`                                   |
 | Imagem           | `![gatinho](https://neocities.org/img/heartcat.png)` |
 | Link             | `[google](https://www.google.com.br)`                |
@@ -62,7 +63,7 @@ Le chat noir possui suporte para algumas tags em Markdown, sendo elas:
 | H2               | `##Texto aqui h2`                                    |
 | H3               | `###Texto aqui h3`                                   |
 
-Novas tag em breve!
+Novas tags em breve!
 
 ## Video Demo
 https://user-images.githubusercontent.com/6977257/121244485-4cca7e80-c875-11eb-947f-66f62ea64597.mp4

@@ -56,6 +56,7 @@ def toMarkDown(texto, elemento):
             FORMATACAO DO TEXTO
         '''
         if p[0] == "*":
+
             if p[1] == "*":
                 ''' Negrito '''
                 tmp = fraseMarcacao(palavras,p, "*")
@@ -83,7 +84,6 @@ def toMarkDown(texto, elemento):
         elif p[-1] == ")" and (p[0]=="[" or p[0]=="!"):
             ''' LINKS '''
 
-                
             label = re.findall(r"\[.+\]", p)[0].replace("[", "").replace("]", "")    
             link = re.findall(r"\(.+\)", p)[0].replace("(", "").replace(")", "")
 
@@ -128,24 +128,40 @@ def fraseMarcacao(palavras,p, marca):
         -------------------------------
         return "Aqui esta taxado"
     '''
+    #palavras= "Oi **aqui tem bold** fim"
+
     comeco = -1
     fim = -1
 
     #As vezes se vier o final '' buga por isso tira logo ele 
     if palavras[-1] == '':
         del palavras[-1]
-
+    
     for i in palavras:
-        if i[-1] == marca:
+        if i[-1] == marca and fim == -1:
             fim = palavras.index(i)
+
     comeco = palavras.index(p)
     if fim != -1:
         ''' ~~Pega Frases Longas e retira da Lista `Palavras` '''
         tmp = " ".join(palavras[comeco:fim+1]).replace(marca, "")
-        del palavras[comeco:fim]
+        
+        #teste
+        #if p == "**frase**":
+        if p == "**negritos**":
+            print(f"tmp: {tmp}")
+            print(f"{comeco}:{fim}")
+            print(palavras)
+
+        if comeco == fim:
+            palavras.pop(comeco)
+        else:
+            del palavras[comeco:fim]
     else: 
         ''' ~Pega~ palavras singulares '''
-        tmp = p.replace("~", "")
+        tmp = p.replace(marca, "")
+        print("ENTROOO")
+        #tmp = p.replace("~", "")
 
 
     return tmp
@@ -269,4 +285,11 @@ for p in paginas:
     nc.upload((f"../site/pages/{p}.html", f"/pages/{p}.html"))
     print(f"Uploading... {p}")
 # curl -H "Authorization: Bearer API_KEY" https://neocities.org/api/list?path=pages
+
+'''
+    Uploading estilo.css
+'''
+nc.upload((f"../site/estilo.css", f"/estilo.css"))
+print("-- Uploading estilo.css")
+
 print("\n")
