@@ -29,12 +29,15 @@ Linha do Codigo 2
 
 ¬ Allposts: A postagem com data mais recente aparecer no topo
      Colocar o designer das postagem tipo [isso](https://parasurv.neocities.org/linux.html)
+```
+FEITOO
 ¬ Menu Diferente:
      Talvez um unico documento contendo a label e o Link
      exemplo: 
          home https://www.google.com/
          twitter https://www.twitter.com
          outra_pagina www.outraPagina.com
+```
 
 ~~¬ Funciona para **Negrito** mas não para **Uma frase aqui**~~
 ~~¬ Não consegue deixar 2 Negritos em uma mesma frase: def fraseMarcacao(palavras,p, marca):~~

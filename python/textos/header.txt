@@ -1,4 +1,5 @@
 JMallone's Page
-https://jmallone.neocities.org/index.html
-https://twitter.com/jmallone2
-https://github.com/Jmallone
+home https://jmallone.neocities.org/index.html
+twitter https://twitter.com/jmallone2
+github https://github.com/Jmallone
+twitch https://www.twitch.tv/jmallone01

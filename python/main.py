@@ -125,14 +125,8 @@ def toMarkDown(texto, elemento, content):
             escreveBloco(elemento, bloco_codigo)
 
         elif p[0] == "`":
-            
-
+            ''' Codigo simples '''
             tmp = fraseMarcacao(palavras,p, "`")
-            
-            if p == "`mesma`":
-                print("Entrou")
-                print(f"TMP: {tmp}")
-                print(palavras)
             attr = {"class": "codigo_single"}
             criaTag(elemento, "span", tmp, attr)
 
@@ -144,8 +138,8 @@ def toMarkDown(texto, elemento, content):
         else:
             ''' Texto normal '''
             elemento.append(p+" ")
-   
     return 
+
 def escreveBloco(elemento, bloco_codigo):
     '''
         Pega o bloco e monta nas tags html correspondentes
@@ -208,7 +202,7 @@ def fraseMarcacao(palavras,p, marca):
     comeco = -1
     fim = -1
 
-    #TODO As vezes se vier o final '' buga por isso tira logo ele 
+    # As vezes se vier o final '' buga por isso tira logo ele 
     if palavras[-1] == '':
         del palavras[-1]
     
@@ -254,16 +248,18 @@ def montaHeader():
             Name and Menu bar
     '''
     header_f = open("textos/header.txt", "r")
+    menu = find("menu")
 
     titulo = header_f.readline().replace("\n","")
-    home =  header_f.readline().replace("\n","")
-    twitter = header_f.readline().replace("\n","")
-    github = header_f.readline().replace("\n","")
-
     sub("titulo", titulo)
-    sub("home_link", home, "link", "home")
-    sub("twitter_link", twitter, "link", "twitter")
-    sub("github_link", github, "link", "github")
+    
+    nomes_links = header_f.read().split("\n")
+    for nl in nomes_links:
+        if nl == '':
+            continue
+        nome, link = nl.split(" ")
+        attr = {"href": link}
+        criaTag(menu[0], "a", nome, attr)
 
     header_f.close()
 
