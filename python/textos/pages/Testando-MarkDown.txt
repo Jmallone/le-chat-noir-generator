@@ -49,3 +49,13 @@ No meio de uma frase `Codigo Simples` Fim da Frase
 **OLA MUNDO!**
 
 ola tenho  Dois espaços  Aqui tambem!
+
+e com   3 espaços e depois     4 espaços e depois infinitos              espaços?
+
+#h1 como frase
+
+
+##h2 como frase
+Ola a todos
+###h3 como frase
+### h3 com espaço e tipo uma frase

@@ -3,21 +3,26 @@ Lista de Afazeres
 #Todo
 Lista de coisas que ainda tenho que implementar
 
-##MarkDown
+##MarkDown && lechatTag
 Citação: > Quote
 ~~Imagem: ![label](url)~~
 ~~Link: [label](url)~~
 ~~Link com Label Grande: [Label bem grande com espaço](url)~~ 
-~~Barra: !--- ~~~
 ~~Codigo: `int a = 6`~~
 ~~Codigo em Bloco: ~~
+~~Tachado: ~~Tachado~~ ~~
 ```
 Linha do Codigo 1
 Linha do Codigo 2
 ```
-~~Tachado: ~~Tachado~~ ~~
 
-##Implementação
+### le chat tag
+~~Barra: !--- ~~~
+centralizar uma imagem: !c[label](url)
+Tabulação: ¬
+
+
+##Implementação & Erros
 > quando tem dois espaços na mesma linha acaba perdendo o que esta a frente!
 
 > apaga os posts tanto do pc como do servidor
@@ -35,4 +40,9 @@ outra_pagina www.outraPagina.com
 ~~> Funciona para **Negrito** mas não para **Uma frase aqui**~~
 ~~> Não consegue deixar 2 Negritos em uma mesma frase: def fraseMarcacao(palavras,p, marca):~~
 ~~> tag !--- tem um br abaixo dela `Talves seja o #h1`~~
-> #h1 com um enter emcima dele
+
+~~> #h1 com um enter emcima dele ~~
+> se colocar taxado `~~ >` ele cria um >na linha de cima
+> Não funciona colocar dois `codigo simples` em uma `mesma` frase
+
+

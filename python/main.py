@@ -49,8 +49,10 @@ def toMarkDown(texto, elemento, content):
 
     for p in palavras:
         if p == '':
-            #TODO dois espaços
-            elemento.append(" ")
+            ''' DOIS ESPAÇOS '''
+            markup = "&nbsp;"
+            s = bs4.BeautifulSoup(markup)
+            elemento.append(s)
             continue 
     
         '''
@@ -71,7 +73,7 @@ def toMarkDown(texto, elemento, content):
                 pass        
 
         elif p[0] == "#":
-            tmp = p.replace("#", "")
+            tmp = fraseMarcacao(palavras,p, "#")
             if p[1]=="#" and p[2] != "#":
                 ''' h2 '''
                 criaTag(elemento, "h2", tmp)
@@ -80,7 +82,9 @@ def toMarkDown(texto, elemento, content):
                 criaTag(elemento, "h3", tmp)
             else:
                 ''' h1 '''
+                tmp = fraseMarcacao(palavras,p, "#")
                 criaTag(elemento, "h1", tmp)
+
             return 1 
 
         elif p[-1] == ")" and (p[0]=="[" or p[0]=="!"):
@@ -176,6 +180,10 @@ def fraseMarcacao(palavras,p, marca):
         -------------------------------
         return "Aqui esta taxado"
     '''
+    
+    ''' Retorna frases que contem o h1 h2 ou h3'''
+    if p[0] == "#":
+        return " ".join(palavras).replace("#", "")
 
     comeco = -1
     fim = -1
