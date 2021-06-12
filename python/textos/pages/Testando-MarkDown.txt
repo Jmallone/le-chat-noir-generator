@@ -54,8 +54,6 @@ ola tenho  Dois espaços  Aqui tambem!
 e com   3 espaços e depois     4 espaços e depois infinitos              espaços?
 
 #h1 como frase
-
-
 ##h2 como frase
 Ola a todos
 ###h3 como frase

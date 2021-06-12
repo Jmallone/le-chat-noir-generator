@@ -44,6 +44,6 @@ Linha do Codigo 2
 ~~¬ #h1 com um enter emcima dele ~~
 ~~¬ se colocar taxado `~~ >` ele cria um >na linha de cima ~~
 ~~¬ Não funciona colocar dois `codigo simples` em uma `mesma` frase~~
-¬ Dois bloco de codigo em um mesmo texto
-        Ele pega o final do codigo bloco e concatena com o cabeço do outro
-¬ Quando o `~` esta com um espaço não funciona 
+~~¬ Dois bloco de codigo em um mesmo texto~~
+~~Ele pega o final do codigo bloco e concatena com o cabeço do outro~~
+¬ Quando o `~` esta com um espaço no começo não funciona 

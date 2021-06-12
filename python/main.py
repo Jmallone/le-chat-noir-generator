@@ -121,11 +121,8 @@ def toMarkDown(texto, elemento, content):
 
         elif p == "```":
             ''' Bloco Codigo '''
-
-            print("\nBLOCO DE CODIGO")
             bloco_codigo =  blocoMarcacao(content, p , "```")
             escreveBloco(elemento, bloco_codigo)
-            print("===================")
 
         elif p[0] == "`":
             ''' Codigo simples '''

@@ -39,7 +39,27 @@ Aproveite
 ```
 
 * * *
+### Editando o Menu
+Para editar o menu modifique o arquivo `python\textos\header.txt`
+O arquivo `header.txt` deve seguir a ordem:
+```
+Primeira Linha: Titulo do Site
+As proximas Linhas: label_do_link link
+```
 
+Exemplo:
+`python\textos\header.txt`
+```
+JMallone's Page
+home https://jmallone.neocities.org/index.html
+twitter https://twitter.com/jmallone2
+github https://github.com/Jmallone
+twitch https://www.twitch.tv/jmallone01
+```
+
+NOTA: entre a `label_do_link` e o `link` tem que haver um espaço.
+
+* * *
 ### Upload para o Site
 Para fazer o upload das paginas geradas execute o arquivo `python\main.py`
 
