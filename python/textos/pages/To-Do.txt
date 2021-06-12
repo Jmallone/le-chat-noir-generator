@@ -11,10 +11,10 @@ Citação: > Quote
 ~~Codigo: `int a = 6`~~
 ~~Codigo em Bloco: ~~
 ~~Tachado: ~~Tachado~~ ~~
-```
+~~```~~
 Linha do Codigo 1
 Linha do Codigo 2
-```
+~~```~~
 
 ### le chat tag
 ~~Barra: !--- ~~
@@ -29,15 +29,13 @@ Linha do Codigo 2
 
 ¬ Allposts: A postagem com data mais recente aparecer no topo
      Colocar o designer das postagem tipo [isso](https://parasurv.neocities.org/linux.html)
-```
-FEITOO
-¬ Menu Diferente:
-     Talvez um unico documento contendo a label e o Link
-     exemplo: 
-         home https://www.google.com/
-         twitter https://www.twitter.com
-         outra_pagina www.outraPagina.com
-```
+
+~~¬ Menu Diferente:~~
+~~Talvez um unico documento contendo a label e o Link~~
+~~exemplo:~~
+~~home https://www.google.com/~~
+~~twitter https://www.twitter.com~~
+~~outra_pagina www.outraPagina.com~~
 
 ~~¬ Funciona para **Negrito** mas não para **Uma frase aqui**~~
 ~~¬ Não consegue deixar 2 Negritos em uma mesma frase: def fraseMarcacao(palavras,p, marca):~~
@@ -46,5 +44,6 @@ FEITOO
 ~~¬ #h1 com um enter emcima dele ~~
 ~~¬ se colocar taxado `~~ >` ele cria um >na linha de cima ~~
 ~~¬ Não funciona colocar dois `codigo simples` em uma `mesma` frase~~
-
-
+¬ Dois bloco de codigo em um mesmo texto
+        Ele pega o final do codigo bloco e concatena com o cabeço do outro
+¬ Quando o `~` esta com um espaço não funciona 

@@ -121,8 +121,11 @@ def toMarkDown(texto, elemento, content):
 
         elif p == "```":
             ''' Bloco Codigo '''
+
+            print("\nBLOCO DE CODIGO")
             bloco_codigo =  blocoMarcacao(content, p , "```")
             escreveBloco(elemento, bloco_codigo)
+            print("===================")
 
         elif p[0] == "`":
             ''' Codigo simples '''
@@ -183,7 +186,15 @@ def blocoMarcacao(content, p, marca):
     fim =  inicio+fim
 
     tmp = content[inicio+1:fim+1]
-    del content[inicio-1:fim+1]
+    del content[inicio:fim+2]
+    #TODO fica com um <br> mesmo que tenha um texto grudado do fecha ```
+    # e.g:  
+    #       ```
+    #           Codigo aqui
+    #           Linha2
+    #       ```
+    #       Um texto normal aqui
+    content.insert(0,"")
 
     return tmp
 
@@ -252,10 +263,10 @@ def montaHeader():
 
     titulo = header_f.readline().replace("\n","")
     sub("titulo", titulo)
-    
+
     nomes_links = header_f.read().split("\n")
     for nl in nomes_links:
-        if nl == '':
+        if nl == "":
             continue
         nome, link = nl.split(" ")
         attr = {"href": link}

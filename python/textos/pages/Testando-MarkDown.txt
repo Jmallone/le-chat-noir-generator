@@ -43,6 +43,7 @@ a = a + 5
 print(f"Soma de A: {a}")
 ```
 
+Mais texto aqui 
 `Codigo Simples`
 No meio de uma frase `Codigo Simples` Fim da Frase
   
@@ -60,3 +61,12 @@ Ola a todos
 ###h3 como frase
 ### h3 com espaço e tipo uma frase
 !c[gatinho](https://neocities.org/img/heartcat.png)
+
+Parece que não tem como ter dois bloco de codigo em um mesmo texto
+```
+Linha 1
+Codigo 2
+Linha3
+fecha linda
+```
+Outra coisa aqui!
