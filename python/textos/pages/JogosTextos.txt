@@ -1,0 +1,48 @@
+Eu adoro Jogos de Texto
+11/06/2021
+
+!c[Inicio](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSLRF6NjhO2Rx2LkQ9Dgzx0sAQ1mXWf2M44Cm8neCjjBKF8wqWS)
+
+Um fato sobre mim é que eu adoro jogos de estrategias ou de gerenciamentos, já joguei um bom punhado deles, particularmente quanto mais ‘tosco’ for o gráfico, mais do jogo eu irei gostar.
+
+Deve ser porque sempre que jogo alguns jogos, eu sempre fico imaginando ‘Será que eu consigo fazer um jogo assim?’, ‘Será que se fosse eu o criador desse jogo ele seria assim, ele seria assado…’
+
+Acho que também deve-se muito pelo fato que os meus computadores nunca conseguiram suportar jogos muitos pesados, com gráficos surpreendentes, então sempre eu ficava com emuladores de Super Nintendo, Game Boy Advance e similares. 
+
+#Dwarf Fortress
+
+Bom mas um jogo que me chamou bastante atenção, tanto pelo seus gráficos como por sua complexidade foi [Dwarf Fortress.](http://www.bay12games.com/dwarves/)
+
+!c[joguin_de_anao](https://cdn.arstechnica.net/wp-content/uploads/2013/04/thatdude-df-aboveground-640x385.png)
+Figura 1 - Tela do Jogo
+
+É um jogo de mineração e construção, todo feito em com caracteres [ANSCII](https://web.fe.up.pt/~ee96100/projecto/Tabela%20ascii.htm) (Figura 1). Neste jogo você controla uma colonia de anões que acabaram de chegar em um local, e que tem como objetivo prosperar.
+
+Você poderá cavar tuneis, construir fortalezas, minerar, pescar, caçar, lutar contra invasores, plantar. Pode-se dizer que o jogo é *SandBox* , ou seja não tem um objetivo primário ou missões a serem cumpridas, você que segue o seu próprio caminho.
+
+Para quem nunca viu o jogo o seu visual pode ser um tanto pitoresco, os anões são apenas um caractere que simulam um rosto, já os animais são representado por letas, por exemplo o gato é a letra “C” (cat) que fica andando pelo mapa e o cachorro a letra “D” ( *dog* ).
+
+A comunidade entorno do DF (Abreviação de Dwarf Fortress) é bem ativa, e muitos não apreciam o designer atual do jogo, optando por instalar modificações que os próprios usuários criam, deixando assim sua aparência bem mais agradável (Figura 2 e 3).
+
+```
+!c[joguin_de_anao](https://steamcdn-a.akamaihd.net/steam/apps/975370/ss_8d7801a0572c841f9aa042b54510298e7856e83b.1920x1080.jpg)
+Figura 2 - Dwarf Fortress com Modificação de Sprites
+
+
+
+!c[joguin_de_anao](https://ibcdn.canaltech.com.br/T4yX3khDZObI2jIEXKyBsID8MGc=/1024x0/smart/i346582.jpeg)
+Figura 3- Sprites Feitos pela Comunidade
+```
+
+#Rim World
+<FIGURA 4>
+Mas o mais legal desse tipo de jogo esta não em seus gráficos e sim em sua mecânica e gerenciamento de recursos e pessoas, alocação de construções, criação e destruição de tuneis, com essa formula, muitos outros jogos do gênero começaram a surgir, um dos mais famosos hoje em dia se chama [Rim World.](https://rimworldgame.com/)
+
+
+Com uma temática diferente, que em vez de anões e um certo medievalismo, agora em Rim World temos explorações espaciais e planetas alienígenas para conquistar e minerar, a mecânica se mantêm a mesma, apenas com algumas diferenças.
+
+<FIGURA 5>
+
+Com um gráfico padrão ( Figura 5) que já agrada os olhos de quem vê, Rim World, pegou o hype que Dwarf Fortress fez, e criou sua própria formula.
+
+Ambos os jogos são divertidos e que com certeza você irá passar longas horas, primeiro aprendendo a como jogar, para depois começar a ficar realmente bom. Mas claro a graça também esta em como aprender a fazer certas coisas. 

@@ -35,7 +35,6 @@ def change_block(arq):
     return arq.read().split('\n')
 
 def toMarkDown(texto, elemento, content):
-    
     if texto != "" and (texto[0] == '[' or texto[0] == "!") and texto[-1] == ")":
         ''' Para Links com Frases Grandes ''' 
         palavras = []
@@ -43,6 +42,10 @@ def toMarkDown(texto, elemento, content):
     else:
         ''' O restante do conteudo '''
         palavras = texto.split(" ")
+        if palavras != ['']:
+            #print(palavras)
+            linkMarcacao(palavras)
+            #print(palavras)
 
     if palavras == ['']:
         return 
@@ -89,7 +92,7 @@ def toMarkDown(texto, elemento, content):
 
         elif p[-1] == ")" and (p[0]=="[" or p[0]=="!"):
             ''' LINKS '''
-
+            
             label = re.findall(r"\[.+\]", p)[0].replace("[", "").replace("]", "")    
             link = re.findall(r"\(.+\)", p)[0].replace("(", "").replace(")", "")
 
@@ -139,6 +142,31 @@ def toMarkDown(texto, elemento, content):
             ''' Texto normal '''
             elemento.append(p+" ")
     return 
+
+def linkMarcacao(texto):
+    '''
+        texto = ['Uma', 'frase', 'aqui', '[Um', 'link', 'grande', 'aqui](google.com)', 'outras', 'palavras']
+        -----------------
+        retorna 
+        texto = ['Uma', 'frase', 'aqui', '[Um link grande aqui](google.com)', 'outras', 'palavras']
+    '''
+    inicio = -1
+    fim = -1
+    for t in texto:
+        if t != '' and t[0] == "[" and inicio == -1:
+            inicio = texto.index(t)
+   
+    if inicio != -1:
+        for t in texto[inicio:]:
+            if t != '' and t[-1] == ")":
+                fim = texto.index(t)
+
+    if inicio == -1 or fim == -1 or (texto[inicio][-1] == ")"):
+        return texto
+    
+    result = " ".join(texto[inicio:fim+1])
+    del texto[inicio:fim+1]
+    texto.insert(inicio, result)
 
 def escreveBloco(elemento, bloco_codigo):
     '''

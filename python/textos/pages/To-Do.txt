@@ -7,7 +7,7 @@ Lista de coisas que ainda tenho que implementar
 Citação: > Quote
 ~~Imagem: ![label](url)~~
 ~~Link: [label](url)~~
-~~Link com Label Grande: [Label bem grande com espaço](url)~~ 
+~~Link com Label Grande: [Label bem grande com espaço](url) ~~
 ~~Codigo: `int a = 6`~~
 ~~Codigo em Bloco: ~~
 ~~Tachado: ~~Tachado~~ ~~
@@ -47,3 +47,13 @@ Linha do Codigo 2
 ~~¬ Dois bloco de codigo em um mesmo texto~~
 ~~Ele pega o final do codigo bloco e concatena com o cabeço do outro~~
 ¬ Quando o `~` esta com um espaço no começo não funciona 
+¬ Fazer o upload das fotos que se encontram na pasta local
+~~Link com uma frase grande dentro de uma frase buga~~
+¬ Quando coloco taxado e tem alguma coisa no final ele buga `~~Algo~~,`
+¬ Não funciona (*dog*).
+       Acho que não funciona pois o split <espaço>
+¬ redimensionar uma imagem
+¬ Não funciona os enter dentro de um bloco de codigo
+¬ Label da imagem não pode ficar sem nada `![](url)`
+¬ a Label Poderia ser a Legenda da Imagem
+¬ Ordem de Prioridade das tags 
