@@ -27,8 +27,8 @@ Linha do Codigo 2
 ¬ apaga os posts tanto do pc como do servidor
     nc.delete('filename1', ...)
 
-¬ Allposts: A postagem com data mais recente aparecer no topo
-     Colocar o designer das postagem tipo [isso](https://parasurv.neocities.org/linux.html)
+~~¬ Allposts: A postagem com data mais recente aparecer no topo~~
+¬ Colocar o designer das postagem tipo [isso](https://parasurv.neocities.org/linux.html)
 
 ~~¬ Menu Diferente:~~
 ~~Talvez um unico documento contendo a label e o Link~~

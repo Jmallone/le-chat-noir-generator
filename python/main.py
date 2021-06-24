@@ -299,13 +299,31 @@ def montaHeader():
 
     header_f.close()
 
+def sortDate(e):
+    ''' Função Auxiliar para o metodo Sort '''
+    return e['date']
+
 def montaPagina(paginas):
-   global soup 
-   with open("../site/index.html") as info:
+    global soup
+
+    with open("../site/index.html") as info:
         txt = info.read()
         soup_index = bs4.BeautifulSoup(txt, "html.parser")
 
-   for p in paginas:
+    paginas_sort = []
+    for p in paginas:
+        post = open(f"textos/pages/{p}.txt")
+        titulo = post.readline().replace("\n","")
+        date = post.readline().replace("\n","")
+        paginas_sort.append({'post':p , 'date': date})
+
+    paginas_sort.sort(reverse=True, key=sortDate)
+    paginas = []
+
+    for p in paginas_sort:
+        paginas.append(p['post'])
+
+    for p in paginas:
         with open("template/template-post.html") as inf:
             txt = inf.read()
             soup = bs4.BeautifulSoup(txt, "html.parser")

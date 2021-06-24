@@ -1,4 +1,4 @@
-Eu adoro Jogos de Texto
+Jogos de Texto
 11/06/2021
 
 !c[Inicio](https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSLRF6NjhO2Rx2LkQ9Dgzx0sAQ1mXWf2M44Cm8neCjjBKF8wqWS)
@@ -26,13 +26,14 @@ A comunidade entorno do DF (Abreviação de Dwarf Fortress) é bem ativa, e muit
 
 ```
 !c[joguin_de_anao](https://steamcdn-a.akamaihd.net/steam/apps/975370/ss_8d7801a0572c841f9aa042b54510298e7856e83b.1920x1080.jpg)
+```
 Figura 2 - Dwarf Fortress com Modificação de Sprites
 
 
-
-!c[joguin_de_anao](https://ibcdn.canaltech.com.br/T4yX3khDZObI2jIEXKyBsID8MGc=/1024x0/smart/i346582.jpeg)
-Figura 3- Sprites Feitos pela Comunidade
 ```
+!c[joguin_de_anao](https://ibcdn.canaltech.com.br/T4yX3khDZObI2jIEXKyBsID8MGc=/1024x0/smart/i346582.jpeg)
+```
+Figura 3- Sprites Feitos pela Comunidade
 
 #Rim World
 <FIGURA 4>
