@@ -310,6 +310,9 @@ def montaPagina(paginas):
         txt = info.read()
         soup_index = bs4.BeautifulSoup(txt, "html.parser")
 
+    '''
+        Faz ordenação dos Posts por Data
+    '''
     paginas_sort = []
     for p in paginas:
         post = open(f"textos/pages/{p}.txt")
@@ -323,6 +326,9 @@ def montaPagina(paginas):
     for p in paginas_sort:
         paginas.append(p['post'])
 
+    '''
+        Atribui os posts ordenados na pagina html
+    '''
     for p in paginas:
         with open("template/template-post.html") as inf:
             txt = inf.read()
@@ -338,10 +344,16 @@ def montaPagina(paginas):
 
 
         br = soup.new_tag("br")
+        li_tag = soup_index.new_tag("li")
+        li_tag.string = f"{date}: "
+
         a_tag = soup_index.new_tag("a", href=f"pages/{p}.html")
-        a_tag.string = f">>> {titulo} - {date}"
+        a_tag.string = f"{titulo}"
         i = soup_index.find("div",{"id":"allPosts"})
-        i.append(a_tag)
+        
+        li_tag.append(a_tag)
+        i.append(li_tag)
+        
         i.append(br)
 
         with open("../site/index.html", "w") as outf:
