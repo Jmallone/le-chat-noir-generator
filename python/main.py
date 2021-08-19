@@ -320,7 +320,11 @@ def montaPagina(paginas):
         date = post.readline().replace("\n","")
         paginas_sort.append({'post':p , 'date': date})
 
-    paginas_sort.sort(reverse=True, key=sortDate)
+    from datetime import datetime
+    paginas_sort.sort(reverse = True, key = lambda date: datetime.strptime(date["date"], '%d/%m/%Y'))
+
+    #paginas_sort.sort(reverse=True, key=sortDate)
+    print(paginas_sort)
     paginas = []
 
     for p in paginas_sort:
