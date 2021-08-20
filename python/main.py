@@ -19,7 +19,7 @@ def change(el, text = '', tipo = 'normal', label = '', arq = ''):
                 br = soup.new_tag("br")
                 el[0].append(br)
         return 
-        
+
     if tipo == "link":
         text = soup.new_tag("a", href=text)
         text.string = label
@@ -67,7 +67,7 @@ def toMarkDown(texto, elemento, content):
                 ''' Negrito '''
                 tmp = fraseMarcacao(palavras,p, "*")
                 criaTag(elemento, "b", tmp)
-                
+
                 pass
             else:
                 ''' Italico '''
@@ -92,19 +92,25 @@ def toMarkDown(texto, elemento, content):
 
         elif p[-1] == ")" and (p[0]=="[" or p[0]=="!"):
             ''' LINKS '''
-            
-            label = re.findall(r"\[.+\]", p)[0].replace("[", "").replace("]", "")    
+
+            label = re.findall(r"\[.+\]", p)[0].replace("[", "").replace("]", "")
             link = re.findall(r"\(.+\)", p)[0].replace("(", "").replace(")", "")
 
             if p[0] == "!":
                 ''' ACHOU UM LINK IMAGEM '''
-                
+
                 attr = {"src": link}
-                
+
                 ''' Centraliza a imagem '''
                 if p[1] == "c":
-                    center = "display: block; margin-left: auto; margin-right: auto;"
-                    attr = {"src": link, "style": center}
+                    attr_adicional = "display: block; margin-left: auto; margin-right: auto;"
+
+                    ''' Redimensiona Imagem '''
+                    if p[2]== "/":
+                        resize = re.findall(r"\/[0-9]+\[", p)[0].replace("/", "").replace("[", "")
+                        attr_adicional += "width:"+resize+"%; height: auto;"
+
+                    attr = {"src": link, "style": attr_adicional}
 
                 criaTag(elemento, "img", "", attr)
 
@@ -117,7 +123,7 @@ def toMarkDown(texto, elemento, content):
             ''' TAXADO '''
             tmp = fraseMarcacao(palavras,p, "~")
             criaTag(elemento, "s", tmp)
-        
+
         elif p == "!---":
             ''' HR '''
             criaTag(elemento, "hr", "")
@@ -141,13 +147,13 @@ def toMarkDown(texto, elemento, content):
         else:
             ''' Texto normal '''
             elemento.append(p+" ")
-    return 
+    return
 
 def linkMarcacao(texto):
     '''
         texto = ['Uma', 'frase', 'aqui', '[Um', 'link', 'grande', 'aqui](google.com)', 'outras', 'palavras']
         -----------------
-        retorna 
+        retorna
         texto = ['Uma', 'frase', 'aqui', '[Um link grande aqui](google.com)', 'outras', 'palavras']
     '''
     inicio = -1
@@ -155,7 +161,7 @@ def linkMarcacao(texto):
     for t in texto:
         if t != '' and t[0] == "[" and inicio == -1:
             inicio = texto.index(t)
-   
+
     if inicio != -1:
         for t in texto[inicio:]:
             if t != '' and t[-1] == ")":
@@ -163,7 +169,7 @@ def linkMarcacao(texto):
 
     if inicio == -1 or fim == -1 or (texto[inicio][-1] == ")"):
         return texto
-    
+
     result = " ".join(texto[inicio:fim+1])
     del texto[inicio:fim+1]
     texto.insert(inicio, result)
@@ -193,12 +199,12 @@ def escreveBloco(elemento, bloco_codigo):
 def blocoMarcacao(content, p, marca):
     '''
             ira pegar os blocos de codigo
-            ``` 
+            ```
             Linha 1
             Linha 2
             linha 3
             ```
-            retirar eles de content 
+            retirar eles de content
             -----------
             retorn ['Linha1', 'Linha2', 'Linha3']
     '''
@@ -323,8 +329,6 @@ def montaPagina(paginas):
     from datetime import datetime
     paginas_sort.sort(reverse = True, key = lambda date: datetime.strptime(date["date"], '%d/%m/%Y'))
 
-    #paginas_sort.sort(reverse=True, key=sortDate)
-    print(paginas_sort)
     paginas = []
 
     for p in paginas_sort:

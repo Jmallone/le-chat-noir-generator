@@ -81,6 +81,7 @@ Le chat noir possui suporte para algumas tags em Markdown, sendo elas:
 | ``Bloco Codigo`` | \`\`\`Bloco Codigo\`\`\`                             |
 | Imagem           | `![gatinho](https://neocities.org/img/heartcat.png)` |
 | Imagem Centralizada        | `!c[gatinho](https://neocities.org/img/heartcat.png)` |
+| Imagem Centralizada e Redimensiona a imagem em 90% | `!c/90[gatinho](https://neocities.org/img/heartcat.png)` |
 | Link             | `[google](https://www.google.com.br)`                |
 | H1               | `# Texto aqui h1`                                    |
 | H2               | `## Texto aqui h2`                                   |
